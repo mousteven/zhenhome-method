@@ -30,23 +30,24 @@ img,svg{ max-width:100%; }
 
 .wrap{ max-width:1040px; margin:0 auto; padding:0 20px; }
 
-/* ---- Hero ---- */
-.hero{
-  position:relative;
-  background: linear-gradient(180deg, rgba(11,18,16,.72), rgba(11,18,16,.88) 65%, var(--deep) 100%),
-    url("images/hero.jpg") center 30%/cover no-repeat, var(--deep);
-  color: var(--deep-ink);
-  text-align:center;
-  padding: clamp(72px,12vw,130px) 20px clamp(60px,9vw,96px);
-}
-.hero .mark{ width:min(104px,24vw); height:auto; margin:0 auto 20px; display:block; filter:drop-shadow(0 4px 18px rgba(0,0,0,.35)); }
-.hero h1{ font-family:"Noto Serif TC","Songti TC",Georgia,serif; font-weight:700; font-size:clamp(30px,5.4vw,48px); margin:0; letter-spacing:.01em; text-wrap:balance; text-shadow:0 2px 24px rgba(0,0,0,.35); }
-.hero .cn{ font-size:14.5px; letter-spacing:.4em; color:var(--gold); margin:12px 0 0; font-weight:600; }
-.hero p.tagline{ max-width:34em; margin:24px auto 0; font-size:16.5px; color:#e3ede8; text-wrap:balance; }
-.cta{ display:inline-block; margin-top:32px; padding:14px 32px; border-radius:999px; background:var(--gold);
+/* ---- Hero: split panel (text block + full-color photo, no dark overlay fighting legibility) ---- */
+.hero{ display:grid; grid-template-columns:1fr 1fr; min-height:clamp(460px,58vw,620px); }
+.hero-panel{ background:var(--deep); color:var(--deep-ink); display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center; padding:44px 32px; }
+.hero-photo{ position:relative; overflow:hidden; background:var(--deep); }
+.hero-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+.hero .mark{ width:min(96px,22vw); height:auto; margin:0 auto 18px; display:block; }
+.hero h1{ font-family:"Noto Serif TC","Songti TC",Georgia,serif; font-weight:700; font-size:clamp(26px,3.6vw,40px); margin:0; letter-spacing:.01em; text-wrap:balance; }
+.hero .cn{ font-size:13.5px; letter-spacing:.4em; color:var(--gold); margin:12px 0 0; font-weight:600; }
+.hero p.tagline{ max-width:30em; margin:22px auto 0; font-size:15.5px; color:#d3e2dc; text-wrap:balance; }
+.cta{ display:inline-block; margin-top:28px; padding:14px 32px; border-radius:999px; background:var(--gold);
   color:#1b1608; font-weight:700; font-size:14.5px; text-decoration:none; letter-spacing:.03em;
   box-shadow:0 10px 28px -10px rgba(201,161,90,.55); transition:transform .18s ease, box-shadow .18s ease; }
 .cta:hover{ filter:brightness(1.06); transform:translateY(-1px); box-shadow:0 14px 32px -10px rgba(201,161,90,.65); }
+@media (max-width:760px){
+  .hero{ grid-template-columns:1fr; }
+  .hero-photo{ order:-1; aspect-ratio:16/10; }
+}
 
 /* ---- sections ---- */
 .section{ padding: clamp(48px,8vw,80px) 20px; border-bottom:1px solid var(--line); }
@@ -136,20 +137,25 @@ footer{ text-align:center; padding:26px 20px 40px; font-size:12.5px; color:var(-
 <body>
 
   <div class="hero">
-    <svg class="mark" viewBox="0 0 240 240" role="img" aria-label="ZhenHome Method 品牌徽章">
-      <circle cx="120" cy="120" r="114" fill="none" stroke="#c9a15a" stroke-width="2.4"/>
-      <circle cx="120" cy="120" r="100" fill="none" stroke="#6fb39f" stroke-width="1.4" opacity=".6"/>
-      <g>
-        <polyline points="72,74 168,74 72,166 168,166" fill="none" stroke="#c9a15a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-        <line x1="100" y1="92" x2="100" y2="148" stroke="#c9a15a" stroke-width="8" stroke-linecap="round"/>
-        <line x1="150" y1="92" x2="150" y2="148" stroke="#c9a15a" stroke-width="8" stroke-linecap="round"/>
-        <line x1="100" y1="120" x2="150" y2="120" stroke="#c9a15a" stroke-width="8" stroke-linecap="round"/>
-      </g>
-    </svg>
-    <h1 class="serif">ZhenHome Method</h1>
-    <p class="cn">臻 家 有 方</p>
-    <p class="tagline">到府居家培訓，讓外籍看護工／家庭幫傭把「做家事」變成「做得好」——由專業收納師與雙語翻譯，直接走進您家客製指導。</p>
-    <a class="cta" href="https://line.me/ti/p/@092bdcss" target="_blank" rel="noopener">加 LINE 好友，預約諮詢</a>
+    <div class="hero-panel">
+      <svg class="mark" viewBox="0 0 240 240" role="img" aria-label="ZhenHome Method 品牌徽章">
+        <circle cx="120" cy="120" r="114" fill="none" stroke="#c9a15a" stroke-width="2.4"/>
+        <circle cx="120" cy="120" r="100" fill="none" stroke="#6fb39f" stroke-width="1.4" opacity=".6"/>
+        <g>
+          <polyline points="72,74 168,74 72,166 168,166" fill="none" stroke="#c9a15a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="100" y1="92" x2="100" y2="148" stroke="#c9a15a" stroke-width="8" stroke-linecap="round"/>
+          <line x1="150" y1="92" x2="150" y2="148" stroke="#c9a15a" stroke-width="8" stroke-linecap="round"/>
+          <line x1="100" y1="120" x2="150" y2="120" stroke="#c9a15a" stroke-width="8" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <h1 class="serif">ZhenHome Method</h1>
+      <p class="cn">臻 家 有 方</p>
+      <p class="tagline">到府居家培訓，讓外籍看護工／家庭幫傭把「做家事」變成「做得好」——由專業收納師與雙語翻譯，直接走進您家客製指導。</p>
+      <a class="cta" href="https://line.me/ti/p/@092bdcss" target="_blank" rel="noopener">加 LINE 好友，預約諮詢</a>
+    </div>
+    <div class="hero-photo">
+      <img src="images/hero.jpg" alt="講師到府協助收納整理的實際情境">
+    </div>
   </div>
 
   <div class="section">
