@@ -48,29 +48,46 @@ img,svg{ max-width:100%; }
 /* ---- sections ---- */
 .section{ padding: clamp(48px,8vw,80px) 20px; border-bottom:1px solid var(--line); }
 .section:last-of-type{ border-bottom:none; }
+.section.alt{ background:var(--surface-2); }
 .section .inner{ max-width:1040px; margin:0 auto; }
 .kicker{ font-size:12px; letter-spacing:.16em; color:var(--accent-ink); font-weight:700; margin-bottom:8px; }
 .section h2{ font-family:Georgia,"Playfair Display","Noto Serif TC","Songti TC",serif; font-size:clamp(22px,3.4vw,30px); margin:0 0 14px; text-wrap:balance; }
-.section .lede{ color:var(--ink-soft); font-size:15.5px; max-width:56em; margin:0 0 28px; }
+.section .lede{ color:var(--ink-soft); font-size:15.5px; max-width:56em; margin:0 0 20px; }
+.section .lede + .lede{ margin-top:-8px; }
 
-.why-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; }
-.why-item{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:24px 22px; box-shadow:var(--shadow); }
-.why-item .num{ font-family:Georgia,"Noto Serif TC",serif; font-size:26px; color:var(--accent); margin-bottom:8px; }
-.why-item .t{ font-weight:700; font-size:15.5px; margin-bottom:6px; }
-.why-item .d{ font-size:13.5px; color:var(--ink-soft); }
+.icon{ width:44px; height:44px; margin-bottom:14px; }
+.icon *{ stroke:var(--accent); }
+
+.why-grid, .service-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; }
+.why-item, .service-item{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:26px 22px; box-shadow:var(--shadow); }
+.why-item .t, .service-item .t{ font-weight:700; font-size:15.5px; margin-bottom:6px; }
+.why-item .d, .service-item .d{ font-size:13.5px; color:var(--ink-soft); }
 
 .steps{ counter-reset: step; list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; }
-.steps li{ counter-increment: step; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:22px; box-shadow:var(--shadow); }
-.steps li::before{ content: counter(step); display:flex; align-items:center; justify-content:center; width:32px; height:32px;
-  border-radius:50%; background:var(--accent-soft); color:var(--accent-ink); font-family:Georgia,serif; font-weight:700; margin-bottom:12px; }
+.steps li{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:22px; box-shadow:var(--shadow); }
+.steps .step-num{ display:flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%;
+  background:var(--accent-soft); color:var(--accent-ink); font-family:Georgia,serif; font-weight:700; font-size:14px; margin-bottom:12px; }
 .steps .t{ font-weight:700; font-size:15px; margin-bottom:4px; }
 .steps .d{ font-size:13.5px; color:var(--ink-soft); }
 
+.audience{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
+.audience-item{ display:flex; gap:14px; align-items:flex-start; background:var(--surface); border:1px solid var(--line);
+  border-radius:10px; padding:20px 22px; box-shadow:var(--shadow); }
+.audience-item .mark-sm{ flex:none; width:28px; height:28px; border-radius:50%; border:1.5px solid var(--accent); position:relative; margin-top:2px; }
+.audience-item .mark-sm::after{ content:""; position:absolute; inset:7px; border-radius:50%; background:var(--accent); }
+.audience-item p{ margin:0; font-size:14.5px; color:var(--ink-soft); }
+
 .team{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; }
-.person{ background:var(--surface-2); border:1px solid var(--line); border-radius:10px; padding:22px 24px; }
+.person{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:24px 26px; box-shadow:var(--shadow); }
 .person .role{ font-size:11.5px; letter-spacing:.1em; color:var(--accent-ink); font-weight:700; margin-bottom:6px; }
 .person .name{ font-family:Georgia,"Noto Serif TC",serif; font-size:18px; font-weight:700; margin-bottom:8px; }
 .person .bio{ font-size:14px; color:var(--ink-soft); }
+
+.faq{ display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+.faq-item{ background:var(--surface); padding:20px 24px; }
+.faq-item .q{ font-weight:700; font-size:15px; margin-bottom:6px; display:flex; gap:10px; }
+.faq-item .q .mark-q{ flex:none; color:var(--accent); font-family:Georgia,serif; }
+.faq-item .a{ font-size:14px; color:var(--ink-soft); padding-left:24px; }
 
 .case-empty{ background:var(--surface); border:1px dashed var(--line); border-radius:10px; padding:40px 28px; text-align:center; color:var(--ink-soft); }
 .case-empty .t{ font-weight:700; color:var(--ink); margin-bottom:6px; }
@@ -105,7 +122,38 @@ footer{ text-align:center; padding:26px 20px 40px; font-size:12.5px; color:var(-
     <div class="inner">
       <div class="kicker">關於我們</div>
       <h2 class="serif">從翻譯現場長出的訓練服務</h2>
-      <p class="lede">臻家有方由長期在移工翻譯第一線工作的團隊發起——我們看見的不是「移工不會做」，而是雇主與看護工之間，常常缺一個真正聽得懂彼此、又懂方法的人，站出來把標準說清楚。所以我們把雙語翻譯與專業收納指導結合，直接走進雇主家中，用雙方都聽得懂的方式，把家事技能真正教會。</p>
+      <p class="lede">臻家有方由長期在移工翻譯第一線工作的團隊發起——我們看見的不是「移工不會做」，而是雇主與看護工之間，常常缺一個真正聽得懂彼此、又懂方法的人，站出來把標準說清楚。很多摩擦不是能力問題，而是溝通斷層：雇主示範一次、講一次道理，看護工聽不懂細節，久了就變成各自將就。</p>
+      <p class="lede">所以我們把雙語翻譯與專業收納指導結合，直接走進雇主家中，用雙方都聽得懂的方式，把家事技能真正教會——不是留下一份看不懂的說明，而是當場示範、當場練習、當場確認學會了。</p>
+    </div>
+  </div>
+
+  <div class="section alt">
+    <div class="inner">
+      <div class="kicker">服務項目</div>
+      <h2 class="serif">我們實際到府教什麼</h2>
+      <p class="lede">以居家收納整理為核心模組，依每個家庭的實際空間與需求客製化調整內容。</p>
+      <div class="service-grid">
+        <div class="service-item">
+          <svg class="icon" viewBox="0 0 44 44" fill="none"><rect x="6" y="8" width="32" height="28" rx="2" stroke-width="2.2"/><line x1="6" y1="19" x2="38" y2="19" stroke-width="2.2"/><line x1="6" y1="30" x2="38" y2="30" stroke-width="2.2"/><line x1="17" y1="8" x2="17" y2="36" stroke-width="2.2"/></svg>
+          <div class="t">收納系統建立</div>
+          <div class="d">依空間條件規劃合理的分類邏輯，不是把東西塞好看，是塞得住、找得到。</div>
+        </div>
+        <div class="service-item">
+          <svg class="icon" viewBox="0 0 44 44" fill="none"><rect x="10" y="10" width="24" height="24" rx="2" stroke-width="2.2"/><path d="M10 18 L22 26 L34 18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          <div class="t">衣物摺疊與分類</div>
+          <div class="d">建立一套看護工學得會、也能每天自己維持下去的摺衣、掛衣標準。</div>
+        </div>
+        <div class="service-item">
+          <svg class="icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="16" stroke-width="2.2"/><path d="M14 26 Q22 14 30 26" stroke-width="2.2" stroke-linecap="round" fill="none"/><circle cx="30" cy="26" r="2" fill="var(--accent)" stroke="none"/></svg>
+          <div class="t">空間動線規劃</div>
+          <div class="d">重新安排常用物品的位置與動線，讓日常整理更省力、更直覺，不用每次都想。</div>
+        </div>
+        <div class="service-item">
+          <svg class="icon" viewBox="0 0 44 44" fill="none"><path d="M32 14 A14 14 0 1 1 22 8" stroke-width="2.2" stroke-linecap="round" fill="none"/><path d="M32 8 L32 14 L26 14" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          <div class="t">日常維持習慣養成</div>
+          <div class="d">重點不是整理一次很漂亮，是教會怎麼持續維持——訓練後追蹤確認習慣真的養成。</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -114,10 +162,38 @@ footer{ text-align:center; padding:26px 20px 40px; font-size:12.5px; color:var(-
       <div class="kicker">為什麼選擇我們</div>
       <h2 class="serif">不只是教技巧，是重新校準居家的默契</h2>
       <div class="why-grid">
-        <div class="why-item"><div class="num serif">01</div><div class="t">雙語即時溝通</div><div class="d">翻譯與訓練同步進行，指令不失真，看護工當場聽懂、當場練習。</div></div>
-        <div class="why-item"><div class="num serif">02</div><div class="t">到府客製化</div><div class="d">直接在您家的實際空間教學，不是教室裡的通用示範，學了就能馬上用。</div></div>
-        <div class="why-item"><div class="num serif">03</div><div class="t">專業收納背景</div><div class="d">合作講師具備專業居家整理資歷，不是速成教學，是真正的方法論。</div></div>
-        <div class="why-item"><div class="num serif">04</div><div class="t">外部視角，重新設定標準</div><div class="d">由第三方專業人士到場指導，比雇主親自反覆糾正更有效，也讓看護工更容易接受。</div></div>
+        <div class="why-item">
+          <svg class="icon" viewBox="0 0 44 44" fill="none"><rect x="5" y="9" width="22" height="16" rx="4" stroke-width="2.2"/><path d="M11 25 L11 31 L17 25" stroke-width="2.2" stroke-linejoin="round" fill="none"/><rect x="17" y="17" width="22" height="16" rx="4" stroke-width="2.2"/><path d="M33 33 L33 39 L27 33" stroke-width="2.2" stroke-linejoin="round" fill="none"/></svg>
+          <div class="t">雙語即時溝通</div>
+          <div class="d">翻譯與訓練同步進行，指令不失真，看護工當場聽懂、當場練習。</div>
+        </div>
+        <div class="why-item">
+          <svg class="icon" viewBox="0 0 44 44" fill="none"><path d="M6 22 L22 8 L38 22" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M11 19 L11 36 L33 36 L33 19" stroke-width="2.2" stroke-linejoin="round" fill="none"/><rect x="18" y="25" width="8" height="11" stroke-width="2.2"/></svg>
+          <div class="t">到府客製化</div>
+          <div class="d">直接在您家的實際空間教學，不是教室裡的通用示範，學了就能馬上用。</div>
+        </div>
+        <div class="why-item">
+          <svg class="icon" viewBox="0 0 44 44" fill="none"><path d="M8 34 L8 12 L36 12 L36 34" stroke-width="2.2" stroke-linejoin="round" fill="none"/><line x1="8" y1="34" x2="36" y2="34" stroke-width="2.2"/><line x1="8" y1="22" x2="36" y2="22" stroke-width="2.2"/><line x1="16" y1="22" x2="16" y2="34" stroke-width="2.2"/><line x1="28" y1="22" x2="28" y2="34" stroke-width="2.2"/></svg>
+          <div class="t">專業收納背景</div>
+          <div class="d">合作講師具備專業居家整理資歷，不是速成教學，是真正的方法論。</div>
+        </div>
+        <div class="why-item">
+          <svg class="icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="15" stroke-width="2.2"/><path d="M27 17 L20 20 L17 27 L24 24 Z" stroke-width="1.8" stroke-linejoin="round" fill="none"/></svg>
+          <div class="t">外部視角，重新設定標準</div>
+          <div class="d">由第三方專業人士到場指導，比雇主親自反覆糾正更有效，也讓看護工更容易接受。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section alt">
+    <div class="inner">
+      <div class="kicker">適合對象</div>
+      <h2 class="serif">這幾種狀況，特別適合找我們</h2>
+      <div class="audience">
+        <div class="audience-item"><span class="mark-sm"></span><p>看護工剛到職，想從第一天就建立正確的家事習慣，而不是慢慢自己摸索。</p></div>
+        <div class="audience-item"><span class="mark-sm"></span><p>家中已聘僱一段時間，但收納整理始終不得要領，雇主每次都要重講一遍。</p></div>
+        <div class="audience-item"><span class="mark-sm"></span><p>希望由專業第三方協助建立標準，重新校準彼此的默契，而不是每次都自己糾正。</p></div>
       </div>
     </div>
   </div>
@@ -127,15 +203,15 @@ footer{ text-align:center; padding:26px 20px 40px; font-size:12.5px; color:var(-
       <div class="kicker">服務流程</div>
       <h2 class="serif">從了解需求到看見改變</h2>
       <ul class="steps">
-        <li><div class="t">需求諮詢</div><div class="d">了解您家中的實際狀況與希望改善的重點。</div></li>
-        <li><div class="t">到府環境評估</div><div class="d">實地確認空間與貴重物品，訓練前先建立共識。</div></li>
-        <li><div class="t">客製化訓練</div><div class="d">收納師示範、雙語翻譯同步講解，看護工當場練習。</div></li>
-        <li><div class="t">追蹤成效</div><div class="d">訓練後 follow-up，確認習慣是否真的養成。</div></li>
+        <li><div class="step-num serif">1</div><div class="t">需求諮詢</div><div class="d">了解您家中的實際狀況與希望改善的重點。</div></li>
+        <li><div class="step-num serif">2</div><div class="t">到府環境評估</div><div class="d">實地確認空間與貴重物品，訓練前先建立共識。</div></li>
+        <li><div class="step-num serif">3</div><div class="t">客製化訓練</div><div class="d">收納師示範、雙語翻譯同步講解，看護工當場練習。</div></li>
+        <li><div class="step-num serif">4</div><div class="t">追蹤成效</div><div class="d">訓練後 follow-up，確認習慣是否真的養成。</div></li>
       </ul>
     </div>
   </div>
 
-  <div class="section">
+  <div class="section alt">
     <div class="inner">
       <div class="kicker">團隊</div>
       <h2 class="serif">帶您走進這場訓練的人</h2>
@@ -143,18 +219,43 @@ footer{ text-align:center; padding:26px 20px 40px; font-size:12.5px; color:var(-
         <div class="person">
           <div class="role">特約培訓師 · 收納技能講師</div>
           <div class="name serif">詹勝凱｜勝凱到你家</div>
-          <div class="bio">專業居家收納整理背景，負責訓練課程之技能規劃、現場示範與指導。</div>
+          <div class="bio">專業居家收納整理背景，負責訓練課程之技能規劃、現場示範與指導，確保教學品質與專業性。</div>
         </div>
         <div class="person">
           <div class="role">品牌負責人 · 雙語翻譯</div>
           <div class="name serif">牟佑彬</div>
-          <div class="bio">深耕移工翻譯與跨文化溝通，負責雙語口譯、客戶需求確認與訓練協同帶領。</div>
+          <div class="bio">深耕移工翻譯與跨文化溝通，負責雙語口譯、客戶需求確認、訓練協同帶領與行前環境評估安排。</div>
         </div>
       </div>
     </div>
   </div>
 
   <div class="section">
+    <div class="inner">
+      <div class="kicker">常見問題</div>
+      <h2 class="serif">你可能會想先知道的事</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <div class="q"><span class="mark-q serif">Q</span>費用怎麼計算？</div>
+          <div class="a">依家中的實際需求（訓練時數、模組內容）客製化規劃，加 LINE 免費諮詢，我們會依您的狀況說明費用與方案。</div>
+        </div>
+        <div class="faq-item">
+          <div class="q"><span class="mark-q serif">Q</span>看護工聽不懂中文，溝通會不會有問題？</div>
+          <div class="a">這正是我們的核心設計——訓練現場有雙語即時口譯同步進行，確保雙方都聽得懂、講得清楚，指令不會在轉述中失真。</div>
+        </div>
+        <div class="faq-item">
+          <div class="q"><span class="mark-q serif">Q</span>訓練過程會不會不小心弄壞家裡的東西？</div>
+          <div class="a">我們很重視這一點——到府前會先進行環境與貴重物品巡視，跟雇主確認可觸碰範圍並列成書面紀錄，貴重、易碎或難維護的物品一律不觸碰或僅在雇主陪同下操作。</div>
+        </div>
+        <div class="faq-item">
+          <div class="q"><span class="mark-q serif">Q</span>服務範圍多大？</div>
+          <div class="a">目前主要服務台中、彰化、南投地區，其他地區歡迎加 LINE 洽詢，我們會盡力協調。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section alt">
     <div class="inner">
       <div class="kicker">案例分享</div>
       <h2 class="serif">真實案例，陸續更新中</h2>
