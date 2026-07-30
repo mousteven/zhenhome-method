@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>臻家有方 ZhenHome Method｜到府居家培訓服務</title>
+<meta name="description" content="臻家有方 ZhenHome Method——到府居家培訓服務，由專業收納師與雙語翻譯，直接走進您家，客製指導外籍看護工／家庭幫傭的收納與家事技能。">
+<style>
+:root{
+  --bg:#f4eddd; --surface:#fffdf7; --surface-2:#f8f0dc; --ink:#2b2318; --ink-soft:#5f5542;
+  --ink-faint:#96886c; --accent:#b07f34; --accent-ink:#7a5220; --accent-soft:#eee0bd; --line:#e3d5b3;
+  --deep:#173b34; --deep-ink:#eaf3ef; --gold:#c9a15a; --emerald-light:#6fb39f;
+  --shadow: 0 1px 2px rgba(43,35,24,.05), 0 12px 32px -16px rgba(43,35,24,.22);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#17140f; --surface:#201b14; --surface-2:#251f16; --ink:#ece2cd; --ink-soft:#b7a684;
+    --ink-faint:#7d6f54; --accent:#d9b268; --accent-ink:#f0d89e; --accent-soft:#362b18; --line:#3a3122;
+    --deep:#0e2621; --deep-ink:#eaf3ef; --shadow: 0 1px 2px rgba(0,0,0,.35), 0 20px 48px -20px rgba(0,0,0,.65); }
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{ background:var(--bg); color:var(--ink); font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Heiti TC",sans-serif;
+  line-height:1.75; -webkit-font-smoothing:antialiased; }
+.serif{ font-family:Georgia,"Playfair Display","Noto Serif TC","Songti TC",serif; }
+a{ color:inherit; }
+img,svg{ max-width:100%; }
+
+.wrap{ max-width:1040px; margin:0 auto; padding:0 20px; }
+
+/* ---- Hero ---- */
+.hero{
+  background:
+    radial-gradient(60% 60% at 50% 30%, rgba(111,179,159,.22), rgba(111,179,159,0) 70%),
+    radial-gradient(120% 90% at 50% 100%, rgba(201,161,90,.10), rgba(0,0,0,0) 60%),
+    var(--deep);
+  color: var(--deep-ink);
+  text-align:center;
+  padding: clamp(64px,10vw,110px) 20px clamp(56px,8vw,90px);
+}
+.hero .mark{ width:min(120px,28vw); height:auto; margin:0 auto 22px; display:block; }
+.hero h1{ font-size:clamp(28px,5vw,44px); margin:0; letter-spacing:.01em; text-wrap:balance; }
+.hero .cn{ font-size:14px; letter-spacing:.35em; color:var(--gold); margin:10px 0 0; font-weight:600; }
+.hero p.tagline{ max-width:34em; margin:22px auto 0; font-size:16px; color:#d3e2dc; text-wrap:balance; }
+.cta{ display:inline-block; margin-top:30px; padding:13px 30px; border-radius:999px; background:var(--gold);
+  color:#1b1608; font-weight:700; font-size:14.5px; text-decoration:none; letter-spacing:.03em; }
+.cta:hover{ filter:brightness(1.06); }
+
+/* ---- sections ---- */
+.section{ padding: clamp(48px,8vw,80px) 20px; border-bottom:1px solid var(--line); }
+.section:last-of-type{ border-bottom:none; }
+.section .inner{ max-width:1040px; margin:0 auto; }
+.kicker{ font-size:12px; letter-spacing:.16em; color:var(--accent-ink); font-weight:700; margin-bottom:8px; }
+.section h2{ font-family:Georgia,"Playfair Display","Noto Serif TC","Songti TC",serif; font-size:clamp(22px,3.4vw,30px); margin:0 0 14px; text-wrap:balance; }
+.section .lede{ color:var(--ink-soft); font-size:15.5px; max-width:56em; margin:0 0 28px; }
+
+.why-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; }
+.why-item{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:24px 22px; box-shadow:var(--shadow); }
+.why-item .num{ font-family:Georgia,"Noto Serif TC",serif; font-size:26px; color:var(--accent); margin-bottom:8px; }
+.why-item .t{ font-weight:700; font-size:15.5px; margin-bottom:6px; }
+.why-item .d{ font-size:13.5px; color:var(--ink-soft); }
+
+.steps{ counter-reset: step; list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; }
+.steps li{ counter-increment: step; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:22px; box-shadow:var(--shadow); }
+.steps li::before{ content: counter(step); display:flex; align-items:center; justify-content:center; width:32px; height:32px;
+  border-radius:50%; background:var(--accent-soft); color:var(--accent-ink); font-family:Georgia,serif; font-weight:700; margin-bottom:12px; }
+.steps .t{ font-weight:700; font-size:15px; margin-bottom:4px; }
+.steps .d{ font-size:13.5px; color:var(--ink-soft); }
+
+.team{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; }
+.person{ background:var(--surface-2); border:1px solid var(--line); border-radius:10px; padding:22px 24px; }
+.person .role{ font-size:11.5px; letter-spacing:.1em; color:var(--accent-ink); font-weight:700; margin-bottom:6px; }
+.person .name{ font-family:Georgia,"Noto Serif TC",serif; font-size:18px; font-weight:700; margin-bottom:8px; }
+.person .bio{ font-size:14px; color:var(--ink-soft); }
+
+.case-empty{ background:var(--surface); border:1px dashed var(--line); border-radius:10px; padding:40px 28px; text-align:center; color:var(--ink-soft); }
+.case-empty .t{ font-weight:700; color:var(--ink); margin-bottom:6px; }
+
+.contact{ background:var(--surface-2); text-align:center; }
+.contact .line-id{ font-family:Georgia,"Noto Serif TC",serif; font-size:24px; font-weight:700; color:var(--accent-ink); margin:10px 0; }
+.contact .sub{ font-size:14px; color:var(--ink-soft); max-width:40em; margin:0 auto; }
+
+footer{ text-align:center; padding:26px 20px 40px; font-size:12.5px; color:var(--ink-faint); }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <svg class="mark" viewBox="0 0 240 240" role="img" aria-label="ZhenHome Method 品牌徽章">
+      <circle cx="120" cy="120" r="114" fill="none" stroke="#c9a15a" stroke-width="2.4"/>
+      <circle cx="120" cy="120" r="100" fill="none" stroke="#6fb39f" stroke-width="1.4" opacity=".6"/>
+      <g>
+        <polyline points="72,74 168,74 72,166 168,166" fill="none" stroke="#c9a15a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="100" y1="92" x2="100" y2="148" stroke="#c9a15a" stroke-width="8" stroke-linecap="round"/>
+        <line x1="150" y1="92" x2="150" y2="148" stroke="#c9a15a" stroke-width="8" stroke-linecap="round"/>
+        <line x1="100" y1="120" x2="150" y2="120" stroke="#c9a15a" stroke-width="8" stroke-linecap="round"/>
+      </g>
+    </svg>
+    <h1 class="serif">ZhenHome Method</h1>
+    <p class="cn">臻 家 有 方</p>
+    <p class="tagline">到府居家培訓，讓外籍看護工／家庭幫傭把「做家事」變成「做得好」——由專業收納師與雙語翻譯，直接走進您家客製指導。</p>
+    <a class="cta" href="https://line.me/ti/p/@092bdcss" target="_blank" rel="noopener">加 LINE 好友，預約諮詢</a>
+  </div>
+
+  <div class="section">
+    <div class="inner">
+      <div class="kicker">關於我們</div>
+      <h2 class="serif">從翻譯現場長出的訓練服務</h2>
+      <p class="lede">臻家有方由長期在移工翻譯第一線工作的團隊發起——我們看見的不是「移工不會做」，而是雇主與看護工之間，常常缺一個真正聽得懂彼此、又懂方法的人，站出來把標準說清楚。所以我們把雙語翻譯與專業收納指導結合，直接走進雇主家中，用雙方都聽得懂的方式，把家事技能真正教會。</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="inner">
+      <div class="kicker">為什麼選擇我們</div>
+      <h2 class="serif">不只是教技巧，是重新校準居家的默契</h2>
+      <div class="why-grid">
+        <div class="why-item"><div class="num serif">01</div><div class="t">雙語即時溝通</div><div class="d">翻譯與訓練同步進行，指令不失真，看護工當場聽懂、當場練習。</div></div>
+        <div class="why-item"><div class="num serif">02</div><div class="t">到府客製化</div><div class="d">直接在您家的實際空間教學，不是教室裡的通用示範，學了就能馬上用。</div></div>
+        <div class="why-item"><div class="num serif">03</div><div class="t">專業收納背景</div><div class="d">合作講師具備專業居家整理資歷，不是速成教學，是真正的方法論。</div></div>
+        <div class="why-item"><div class="num serif">04</div><div class="t">外部視角，重新設定標準</div><div class="d">由第三方專業人士到場指導，比雇主親自反覆糾正更有效，也讓看護工更容易接受。</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="inner">
+      <div class="kicker">服務流程</div>
+      <h2 class="serif">從了解需求到看見改變</h2>
+      <ul class="steps">
+        <li><div class="t">需求諮詢</div><div class="d">了解您家中的實際狀況與希望改善的重點。</div></li>
+        <li><div class="t">到府環境評估</div><div class="d">實地確認空間與貴重物品，訓練前先建立共識。</div></li>
+        <li><div class="t">客製化訓練</div><div class="d">收納師示範、雙語翻譯同步講解，看護工當場練習。</div></li>
+        <li><div class="t">追蹤成效</div><div class="d">訓練後 follow-up，確認習慣是否真的養成。</div></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="inner">
+      <div class="kicker">團隊</div>
+      <h2 class="serif">帶您走進這場訓練的人</h2>
+      <div class="team">
+        <div class="person">
+          <div class="role">特約培訓師 · 收納技能講師</div>
+          <div class="name serif">詹勝凱｜勝凱到你家</div>
+          <div class="bio">專業居家收納整理背景，負責訓練課程之技能規劃、現場示範與指導。</div>
+        </div>
+        <div class="person">
+          <div class="role">品牌負責人 · 雙語翻譯</div>
+          <div class="name serif">牟佑彬</div>
+          <div class="bio">深耕移工翻譯與跨文化溝通，負責雙語口譯、客戶需求確認與訓練協同帶領。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="inner">
+      <div class="kicker">案例分享</div>
+      <h2 class="serif">真實案例，陸續更新中</h2>
+      <div class="case-empty">
+        <div class="t">第一批案例準備中</div>
+        <div>我們正在服務第一批客戶，完成後將於此處分享實際成效與回饋——追蹤 LINE 官方帳號，第一時間收到更新。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section contact">
+    <div class="inner">
+      <div class="kicker">聯絡我們</div>
+      <div class="line-id serif">LINE 官方帳號 @092bdcss</div>
+      <div class="sub">加入好友即可預約諮詢，我們會依您家中的實際需求安排訓練內容。</div>
+      <a class="cta" href="https://line.me/ti/p/@092bdcss" target="_blank" rel="noopener" style="margin-top:20px">立即加入</a>
+    </div>
+  </div>
+
+  <footer>© 2026 臻家有方企業社 ZhenHome Method</footer>
+
+</body>
+</html>
