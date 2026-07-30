@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mousteven.github.io/zhenhome-method/sitemap.xml
