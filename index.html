@@ -57,6 +57,7 @@ img,svg{ max-width:100%; }
 
 .icon{ width:44px; height:44px; margin-bottom:14px; }
 .icon *{ stroke:var(--accent); }
+.icon-photo{ width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px; margin-bottom:14px; display:block; border:1px solid var(--line); }
 
 .why-grid, .service-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; }
 .why-item, .service-item{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:26px 22px; box-shadow:var(--shadow); }
@@ -95,9 +96,11 @@ img,svg{ max-width:100%; }
 .illustration .fill-accent{ fill:var(--accent); stroke:none; }
 .illustration .caption{ font-size:12px; letter-spacing:.08em; fill:var(--ink-faint); stroke:none; font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif; }
 
-.feature-photo{ max-width:640px; margin:0 auto 32px; }
-.feature-photo img{ width:100%; height:auto; display:block; border-radius:12px; box-shadow:var(--shadow); border:1px solid var(--line); }
-.feature-photo figcaption{ text-align:center; font-size:12px; letter-spacing:.06em; color:var(--ink-faint); margin-top:10px; }
+.showcase{ max-width:560px; margin:0 auto 28px; }
+.showcase svg{ width:100%; height:auto; }
+.showcase svg *{ stroke:var(--accent); }
+.showcase .fill-accent{ fill:var(--accent); stroke:none; }
+.showcase .caption{ font-size:12px; letter-spacing:.08em; fill:var(--ink-faint); stroke:none; font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif; }
 
 .case-empty{ background:var(--surface); border:1px dashed var(--line); border-radius:10px; padding:40px 28px; text-align:center; color:var(--ink-soft); }
 .case-empty .t{ font-weight:700; color:var(--ink); margin-bottom:6px; }
@@ -157,28 +160,60 @@ footer{ text-align:center; padding:26px 20px 40px; font-size:12.5px; color:var(-
       <div class="kicker">服務項目</div>
       <h2 class="serif">我們實際到府教什麼</h2>
       <p class="lede">以居家收納整理為核心模組，依每個家庭的實際空間與需求客製化調整內容。</p>
-      <figure class="feature-photo">
-        <img src="images/service-folding.png" alt="示意情境：看護工在雇主家中依收納系統整理摺疊衣物" loading="lazy">
-        <figcaption>示意情境・依收納系統整理摺疊衣物</figcaption>
-      </figure>
+      <div class="showcase" role="img" aria-label="示意圖：衣櫃整理前雜亂、整理後分層有序的對比">
+        <svg viewBox="0 0 600 240" fill="none">
+          <rect x="20" y="20" width="230" height="190" rx="6" stroke-width="2.5"/>
+          <line x1="50" y1="60" x2="90" y2="100" stroke-width="2" stroke-linecap="round"/>
+          <line x1="95" y1="55" x2="135" y2="112" stroke-width="2" stroke-linecap="round"/>
+          <line x1="145" y1="70" x2="105" y2="130" stroke-width="2" stroke-linecap="round"/>
+          <line x1="165" y1="50" x2="212" y2="118" stroke-width="2" stroke-linecap="round"/>
+          <line x1="60" y1="140" x2="122" y2="168" stroke-width="2" stroke-linecap="round"/>
+          <line x1="150" y1="150" x2="200" y2="188" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="205" cy="70" r="11" stroke-width="2"/>
+          <rect x="48" y="152" width="42" height="20" rx="3" stroke-width="2" transform="rotate(12 69 162)"/>
+          <path d="M270 115 L328 115" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M316 104 L330 115 L316 126" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <rect x="350" y="20" width="230" height="190" rx="6" stroke-width="2.5" fill="none"/>
+          <line x1="360" y1="90" x2="570" y2="90" stroke-width="1.8"/>
+          <line x1="360" y1="130" x2="570" y2="130" stroke-width="1.8"/>
+          <line x1="360" y1="170" x2="570" y2="170" stroke-width="1.8"/>
+          <rect x="372" y="74" width="24" height="15" rx="2" stroke-width="1.8"/>
+          <rect x="404" y="74" width="24" height="15" rx="2" stroke-width="1.8"/>
+          <rect x="436" y="74" width="24" height="15" rx="2" stroke-width="1.8"/>
+          <rect x="468" y="74" width="24" height="15" rx="2" stroke-width="1.8"/>
+          <rect x="500" y="74" width="24" height="15" rx="2" stroke-width="1.8"/>
+          <rect x="372" y="114" width="24" height="15" rx="2" stroke-width="1.8"/>
+          <rect x="404" y="114" width="24" height="15" rx="2" stroke-width="1.8"/>
+          <rect x="436" y="114" width="24" height="15" rx="2" stroke-width="1.8"/>
+          <rect x="468" y="114" width="24" height="15" rx="2" stroke-width="1.8"/>
+          <rect x="500" y="114" width="24" height="15" rx="2" stroke-width="1.8"/>
+          <rect x="372" y="154" width="24" height="15" rx="2" stroke-width="1.8"/>
+          <rect x="404" y="154" width="24" height="15" rx="2" stroke-width="1.8"/>
+          <rect x="436" y="154" width="24" height="15" rx="2" stroke-width="1.8"/>
+          <rect x="468" y="154" width="24" height="15" rx="2" stroke-width="1.8"/>
+          <rect x="500" y="154" width="24" height="15" rx="2" stroke-width="1.8"/>
+          <text x="135" y="228" text-anchor="middle" class="caption">整理前</text>
+          <text x="465" y="228" text-anchor="middle" class="caption">整理後</text>
+        </svg>
+      </div>
       <div class="service-grid">
         <div class="service-item">
-          <svg class="icon" viewBox="0 0 44 44" fill="none"><rect x="6" y="8" width="32" height="28" rx="2" stroke-width="2.2"/><line x1="6" y1="19" x2="38" y2="19" stroke-width="2.2"/><line x1="6" y1="30" x2="38" y2="30" stroke-width="2.2"/><line x1="17" y1="8" x2="17" y2="36" stroke-width="2.2"/></svg>
+          <img class="icon-photo" src="images/service-folding.png" alt="收納系統建立 示意情境">
           <div class="t">收納系統建立</div>
           <div class="d">依空間條件規劃合理的分類邏輯，不是把東西塞好看，是塞得住、找得到。</div>
         </div>
         <div class="service-item">
-          <svg class="icon" viewBox="0 0 44 44" fill="none"><rect x="10" y="10" width="24" height="24" rx="2" stroke-width="2.2"/><path d="M10 18 L22 26 L34 18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          <img class="icon-photo" src="images/service-folding.png" alt="衣物摺疊與分類 示意情境">
           <div class="t">衣物摺疊與分類</div>
           <div class="d">建立一套看護工學得會、也能每天自己維持下去的摺衣、掛衣標準。</div>
         </div>
         <div class="service-item">
-          <svg class="icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="16" stroke-width="2.2"/><path d="M14 26 Q22 14 30 26" stroke-width="2.2" stroke-linecap="round" fill="none"/><circle cx="30" cy="26" r="2" fill="var(--accent)" stroke="none"/></svg>
+          <img class="icon-photo" src="images/service-folding.png" alt="空間動線規劃 示意情境">
           <div class="t">空間動線規劃</div>
           <div class="d">重新安排常用物品的位置與動線，讓日常整理更省力、更直覺，不用每次都想。</div>
         </div>
         <div class="service-item">
-          <svg class="icon" viewBox="0 0 44 44" fill="none"><path d="M32 14 A14 14 0 1 1 22 8" stroke-width="2.2" stroke-linecap="round" fill="none"/><path d="M32 8 L32 14 L26 14" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          <img class="icon-photo" src="images/service-folding.png" alt="日常維持習慣養成 示意情境">
           <div class="t">日常維持習慣養成</div>
           <div class="d">重點不是整理一次很漂亮，是教會怎麼持續維持——訓練後追蹤確認習慣真的養成。</div>
         </div>
