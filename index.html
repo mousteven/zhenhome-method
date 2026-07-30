@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>臻家有方 ZhenHome Method｜到府居家培訓服務</title>
 <meta name="description" content="臻家有方 ZhenHome Method——到府居家培訓服務，由專業收納師與雙語翻譯，直接走進您家，客製指導外籍看護工／家庭幫傭的收納與家事技能。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#f4eddd; --surface:#fffdf7; --surface-2:#f8f0dc; --ink:#2b2318; --ink-soft:#5f5542;
@@ -19,9 +22,9 @@
 }
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; }
-body{ background:var(--bg); color:var(--ink); font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Heiti TC",sans-serif;
+body{ background:var(--bg); color:var(--ink); font-family:"Noto Sans TC","Microsoft JhengHei","PingFang TC","Heiti TC",sans-serif;
   line-height:1.75; -webkit-font-smoothing:antialiased; }
-.serif{ font-family:Georgia,"Playfair Display","Noto Serif TC","Songti TC",serif; }
+.serif{ font-family:"Noto Serif TC","Songti TC","PMingLiU",Georgia,serif; }
 a{ color:inherit; }
 img,svg{ max-width:100%; }
 
@@ -29,21 +32,21 @@ img,svg{ max-width:100%; }
 
 /* ---- Hero ---- */
 .hero{
-  background:
-    radial-gradient(60% 60% at 50% 30%, rgba(111,179,159,.22), rgba(111,179,159,0) 70%),
-    radial-gradient(120% 90% at 50% 100%, rgba(201,161,90,.10), rgba(0,0,0,0) 60%),
-    var(--deep);
+  position:relative;
+  background: linear-gradient(180deg, rgba(11,18,16,.72), rgba(11,18,16,.88) 65%, var(--deep) 100%),
+    url("images/hero.jpg") center 30%/cover no-repeat, var(--deep);
   color: var(--deep-ink);
   text-align:center;
-  padding: clamp(64px,10vw,110px) 20px clamp(56px,8vw,90px);
+  padding: clamp(72px,12vw,130px) 20px clamp(60px,9vw,96px);
 }
-.hero .mark{ width:min(120px,28vw); height:auto; margin:0 auto 22px; display:block; }
-.hero h1{ font-size:clamp(28px,5vw,44px); margin:0; letter-spacing:.01em; text-wrap:balance; }
-.hero .cn{ font-size:14px; letter-spacing:.35em; color:var(--gold); margin:10px 0 0; font-weight:600; }
-.hero p.tagline{ max-width:34em; margin:22px auto 0; font-size:16px; color:#d3e2dc; text-wrap:balance; }
-.cta{ display:inline-block; margin-top:30px; padding:13px 30px; border-radius:999px; background:var(--gold);
-  color:#1b1608; font-weight:700; font-size:14.5px; text-decoration:none; letter-spacing:.03em; }
-.cta:hover{ filter:brightness(1.06); }
+.hero .mark{ width:min(104px,24vw); height:auto; margin:0 auto 20px; display:block; filter:drop-shadow(0 4px 18px rgba(0,0,0,.35)); }
+.hero h1{ font-family:"Noto Serif TC","Songti TC",Georgia,serif; font-weight:700; font-size:clamp(30px,5.4vw,48px); margin:0; letter-spacing:.01em; text-wrap:balance; text-shadow:0 2px 24px rgba(0,0,0,.35); }
+.hero .cn{ font-size:14.5px; letter-spacing:.4em; color:var(--gold); margin:12px 0 0; font-weight:600; }
+.hero p.tagline{ max-width:34em; margin:24px auto 0; font-size:16.5px; color:#e3ede8; text-wrap:balance; }
+.cta{ display:inline-block; margin-top:32px; padding:14px 32px; border-radius:999px; background:var(--gold);
+  color:#1b1608; font-weight:700; font-size:14.5px; text-decoration:none; letter-spacing:.03em;
+  box-shadow:0 10px 28px -10px rgba(201,161,90,.55); transition:transform .18s ease, box-shadow .18s ease; }
+.cta:hover{ filter:brightness(1.06); transform:translateY(-1px); box-shadow:0 14px 32px -10px rgba(201,161,90,.65); }
 
 /* ---- sections ---- */
 .section{ padding: clamp(48px,8vw,80px) 20px; border-bottom:1px solid var(--line); }
@@ -51,23 +54,31 @@ img,svg{ max-width:100%; }
 .section.alt{ background:var(--surface-2); }
 .section .inner{ max-width:1040px; margin:0 auto; }
 .kicker{ font-size:12px; letter-spacing:.16em; color:var(--accent-ink); font-weight:700; margin-bottom:8px; }
-.section h2{ font-family:Georgia,"Playfair Display","Noto Serif TC","Songti TC",serif; font-size:clamp(22px,3.4vw,30px); margin:0 0 14px; text-wrap:balance; }
+.section h2{ font-family:"Noto Serif TC","Songti TC",Georgia,serif; font-weight:700; font-size:clamp(23px,3.6vw,32px); margin:0 0 14px; text-wrap:balance; letter-spacing:.01em; }
 .section .lede{ color:var(--ink-soft); font-size:15.5px; max-width:56em; margin:0 0 20px; }
 .section .lede + .lede{ margin-top:-8px; }
 
 .icon{ width:44px; height:44px; margin-bottom:14px; }
 .icon *{ stroke:var(--accent); }
-.icon-photo{ width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px; margin-bottom:14px; display:block; border:1px solid var(--line); }
+.icon-photo{ width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px; margin-bottom:14px; display:block; border:1px solid var(--line);
+  transition:transform .35s ease; }
+.service-item:hover .icon-photo{ transform:scale(1.035); }
+.service-item{ overflow:hidden; }
 
 .why-grid, .service-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; }
-.why-item, .service-item{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:26px 22px; box-shadow:var(--shadow); }
+.why-item, .service-item{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:26px 22px; box-shadow:var(--shadow);
+  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+.why-item:hover, .service-item:hover{ transform:translateY(-3px); border-color:color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow:0 18px 34px -18px rgba(43,35,24,.3), var(--shadow); }
 .why-item .t, .service-item .t{ font-weight:700; font-size:15.5px; margin-bottom:6px; }
 .why-item .d, .service-item .d{ font-size:13.5px; color:var(--ink-soft); }
 
 .steps{ counter-reset: step; list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; }
-.steps li{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:22px; box-shadow:var(--shadow); }
+.steps li{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:22px; box-shadow:var(--shadow);
+  transition:transform .22s ease, box-shadow .22s ease; }
+.steps li:hover{ transform:translateY(-3px); box-shadow:0 18px 34px -18px rgba(43,35,24,.3), var(--shadow); }
 .steps .step-num{ display:flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%;
-  background:var(--accent-soft); color:var(--accent-ink); font-family:Georgia,serif; font-weight:700; font-size:14px; margin-bottom:12px; }
+  background:var(--accent-soft); color:var(--accent-ink); font-family:"Noto Serif TC",Georgia,serif; font-weight:700; font-size:14px; margin-bottom:12px; }
 .steps .t{ font-weight:700; font-size:15px; margin-bottom:4px; }
 .steps .d{ font-size:13.5px; color:var(--ink-soft); }
 
@@ -81,13 +92,13 @@ img,svg{ max-width:100%; }
 .team{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; }
 .person{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:24px 26px; box-shadow:var(--shadow); }
 .person .role{ font-size:11.5px; letter-spacing:.1em; color:var(--accent-ink); font-weight:700; margin-bottom:6px; }
-.person .name{ font-family:Georgia,"Noto Serif TC",serif; font-size:18px; font-weight:700; margin-bottom:8px; }
+.person .name{ font-family:"Noto Serif TC",Georgia,serif; font-size:19px; font-weight:700; margin-bottom:8px; }
 .person .bio{ font-size:14px; color:var(--ink-soft); }
 
 .faq{ display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden; }
 .faq-item{ background:var(--surface); padding:20px 24px; }
 .faq-item .q{ font-weight:700; font-size:15px; margin-bottom:6px; display:flex; gap:10px; }
-.faq-item .q .mark-q{ flex:none; color:var(--accent); font-family:Georgia,serif; }
+.faq-item .q .mark-q{ flex:none; color:var(--accent); font-family:"Noto Serif TC",Georgia,serif; }
 .faq-item .a{ font-size:14px; color:var(--ink-soft); padding-left:24px; }
 
 .illustration{ max-width:640px; margin:8px auto 0; }
@@ -106,10 +117,20 @@ img,svg{ max-width:100%; }
 .case-empty .t{ font-weight:700; color:var(--ink); margin-bottom:6px; }
 
 .contact{ background:var(--surface-2); text-align:center; }
-.contact .line-id{ font-family:Georgia,"Noto Serif TC",serif; font-size:24px; font-weight:700; color:var(--accent-ink); margin:10px 0; }
+.contact .line-id{ font-family:"Noto Serif TC",Georgia,serif; font-size:25px; font-weight:700; color:var(--accent-ink); margin:10px 0; }
 .contact .sub{ font-size:14px; color:var(--ink-soft); max-width:40em; margin:0 auto; }
 
 footer{ text-align:center; padding:26px 20px 40px; font-size:12.5px; color:var(--ink-faint); }
+
+.reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+.reveal.is-visible{ opacity:1; transform:none; }
+.section .inner > *:nth-child(1){ transition-delay:0s; }
+.section .inner > *:nth-child(2){ transition-delay:.07s; }
+.section .inner > *:nth-child(3){ transition-delay:.14s; }
+.section .inner > *:nth-child(4){ transition-delay:.21s; }
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+}
 </style>
 </head>
 <body>
@@ -341,5 +362,17 @@ footer{ text-align:center; padding:26px 20px 40px; font-size:12.5px; color:var(-
 
   <footer>© 2026 臻家有方企業社 ZhenHome Method</footer>
 
+<script>
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+  var targets = document.querySelectorAll('.section .inner > *');
+  targets.forEach(function(el){ el.classList.add('reveal'); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(function(el){ io.observe(el); });
+}
+</script>
 </body>
 </html>
